@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
-const SYSTEM_PROMPT = "You are a helpful, friendly AI assistant in a terminal chat app.";
+const SYSTEM_PROMPT = "You are a helpful, friendly ai assistant in a terminal ";
 
 /**
  * Sends a prompt to Gemini and streams the response token-by-token to stdout.
