@@ -4,10 +4,6 @@ const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const SYSTEM_PROMPT = "You are a helpful, friendly ai assistant in a terminal ";
 
-/**
- * Sends a prompt to Gemini and streams the response token-by-token to stdout.
- * Returns the full response text once streaming is complete.
- */
 export async function aiGemini(userMessage, onToken) {
   if (!userMessage || userMessage.trim() === "") {
     throw new Error("Empty input: cannot send a blank message please input message");
