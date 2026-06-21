@@ -29,7 +29,7 @@ function printHelp(){
 }
 
 function askQuestion(){
-    r1.question(colors.cyan("User: ", async (input)=>{
+    r1.question(colors.cyan("User: "), async (input) => {
         const text = input.trim();
 
         if(text === ""){
@@ -40,7 +40,7 @@ function askQuestion(){
         switch(text){
         case "/exit":
         console.log(colors.gray("Goodbye!"));
-        rl.close();
+        r1.close();
         return;
 
         case "/groq":
@@ -71,10 +71,9 @@ function askQuestion(){
       const { text: responseText, modelUsed } = await getAIResponse(
         text,
         currentModel,
-        (token) => process.stdout.write(token) // streams tokens live
+        (token) => process.stdout.write(token)
       );
  
-      // If fallback switched models, keep the user informed for next turn
       if (modelUsed !== currentModel) {
         console.log(colors.gray(`\n(Note: this reply came from ${modelUsed} as a fallback.)`));
       }
@@ -85,7 +84,7 @@ function askQuestion(){
     }
  
     askQuestion();
-    }))
+    });
 }
 
 console.log(colors.gray("=== Terminal AI Chat (Groq + Gemini) ==="));
