@@ -1,5 +1,5 @@
 import {aiGroq} from "../Services/groq.js";
-import { aiGemini } from "../Services/gemini";
+import { aiGemini } from "../Services/gemini.js";
 
 const colors = {
   red: (s) => `\x1b[31m${s}\x1b[0m`,
